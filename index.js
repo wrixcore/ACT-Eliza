@@ -9,8 +9,7 @@ class ElizaAsciiArt {
   constructor() {
     this.imageProcessor = new ElizaImageProcessor();
     this.videoProcessor = new ElizaVideoProcessor();
-    this.logoUtils = new ElizaLogoUtils();
-    
+
     this.createDirectories();
   }
 
@@ -35,18 +34,14 @@ USAGE:
   node index.js <command> [options]
 
 COMMANDS:
-  image-to-ascii    Convert image/GIF to ASCII art
-  video-to-ascii    Convert video to ASCII art
-  video-to-text     Convert video to ASCII text
-  add-logo          Add logo to image
-  resize            Resize image
+  image-to-ascii    Convert image/GIF to encoded art
+  video-to-ascii    Convert video to encoded art
+  video-to-text     Convert video to encoded text
   help              Show this help message
 
 EXAMPLES:
   node index.js image-to-ascii input/image.png
   node index.js video-to-ascii input/video.mp4
-  node index.js add-logo input/image.png input/logo.png
-  node index.js resize input/image.png --width 800
 
 OPTIONS:
   --output, -o      Output path
@@ -132,13 +127,6 @@ OPTIONS:
           await this.handleVideoToText(inputs, options);
           break;
         
-        case 'add-logo':
-          await this.handleAddLogo(inputs, options);
-          break;
-        
-        case 'resize':
-          await this.handleResize(inputs, options);
-          break;
         
         case 'help':
         case undefined:
@@ -231,47 +219,7 @@ OPTIONS:
     console.log('Text conversion completed!');
   }
 
-  async handleAddLogo(inputs, options) {
-    if (inputs.length < 2) {
-      console.log('Please provide input image and logo paths');
-      return;
-    }
 
-    const imagePath = inputs[0];
-    const logoPath = inputs[1];
-    const outputPath = options.output || imagePath.replace(/\.[^/.]+$/, '_with_logo.png');
-    
-    console.log(`Adding logo to ${imagePath}...`);
-    
-    const logoOptions = {
-      logoPosition: 'bottom-right',
-      logoScale: 0.1,
-      margin: 20
-    };
-
-    await this.logoUtils.addLogoToPNG(imagePath, logoPath, outputPath, logoOptions);
-    console.log('Logo added successfully!');
-  }
-
-  async handleResize(inputs, options) {
-    if (inputs.length === 0) {
-      console.log('Please provide an input image path');
-      return;
-    }
-
-    const inputPath = inputs[0];
-    const outputPath = options.output || inputPath.replace(/\.[^/.]+$/, '_resized.png');
-    
-    console.log(`Resizing ${inputPath}...`);
-    
-    const resizeOptions = {
-      width: options.width,
-      height: options.height
-    };
-
-    await this.logoUtils.resizeImage(inputPath, outputPath, resizeOptions);
-    console.log('Image resized successfully!');
-  }
 }
 
 if (require.main === module) {
