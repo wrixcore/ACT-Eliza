@@ -1,0 +1,47 @@
+{
+  "name": "eliza-encoder",
+  "version": "1.0.0",
+  "description": "Eliza ASCII Art Generator",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "image": "node image-to-ascii.js",
+    "video": "node video-to-ascii.js",
+    "logo": "node logo-utils.js",
+    "install-deps": "npm install",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "ascii",
+    "art",
+    "image",
+    "video",
+    "eliza",
+    "conversion",
+    "graphics",
+    "terminal",
+    "cli"
+  ],
+  "author": "Eliza Team",
+  "license": "MIT",
+  "dependencies": {
+    "canvas": "^2.11.2",
+    "fluent-ffmpeg": "^2.1.2",
+    "gifencoder": "^2.0.1"
+  },
+  "optionalDependencies": {
+    "gif-frames": "^1.0.1",
+    "jimp": "^0.22.8"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wrixcore/ACT-Eliza"
+  },
+  "bugs": {
+    "url": "https://github.com/wrixcore/ACT-Eliza/issues"
+  },
+  "homepage": "https://act-eliza.com/"
+}
