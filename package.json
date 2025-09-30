@@ -1,13 +1,12 @@
 {
-  "name": "eliza-encoder",
+  "name": "ACT-Eliza",
   "version": "1.0.0",
-  "description": "Eliza ASCII Art Generator",
+  "description": "Eliza Encoder",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "image": "node image-to-ascii.js",
     "video": "node video-to-ascii.js",
-    "logo": "node logo-utils.js",
     "install-deps": "npm install",
     "test": "echo \"No tests specified\" && exit 0"
   },
