@@ -4,7 +4,6 @@ const fs = require('fs');
 const path = require('path');
 const ElizaImageProcessor = require('./image-to-ascii');
 const ElizaVideoProcessor = require('./video-to-ascii');
-const ElizaLogoUtils = require('./logo-utils');
 
 class ElizaAsciiArt {
   constructor() {
