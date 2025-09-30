@@ -1,6 +1,6 @@
 # Eliza Encoder
 
-Transform your images and videos into stunning ASCII art with the power of Eliza technology!
+Transform your images and videos into stunning encoded art with the power of Eliza technology!
 
 [![Website](https://img.shields.io/badge/Website-act--eliza.com-green?style=for-the-badge)](https://act-eliza.com/)
 [![X (Twitter)](https://img.shields.io/badge/X-@actEliza-1DA1F2?style=for-the-badge&logo=x&logoColor=white)](https://x.com/actEliza)
@@ -8,26 +8,21 @@ Transform your images and videos into stunning ASCII art with the power of Eliza
 
 ## Features
 
-### Image to ASCII Art
-- Convert images or GIFs into stunning ASCII art
+### Image to Encoded Art
+- Convert images or GIFs into stunning encoded art
 - Process GIF frames individually with full animation support  
 - Customizable output with adjustable font sizes, character spacing, and dimensions
 - Multiple color schemes including the signature Eliza green
 
-### Video to ASCII Art
-- Transform videos into ASCII art sequences
+### Video to Encoded Art
+- Transform videos into encoded art sequences
 - Preserve audio in final MP4 output
 - Batch frame processing with progress tracking
 - Synchronized output maintaining original video timing
 
-### Logo & Watermark Tools
-- Add logos to images and GIFs with customizable positioning
-- Text watermarks with opacity and styling options
-- Batch processing for multiple files
-- Transparent background support
 
 ### Text Export
-- Export ASCII art as plain text files
+- Export encoded art as plain text files
 - Batch video processing with configurable frames per file
 - Perfect for terminal display and text-based applications
 
@@ -61,26 +56,20 @@ Optional dependencies:
 
 ## Usage Examples
 
-### Convert Image to ASCII Art
+### Convert Image to Encoded Art
 ```bash
 node index.js image-to-ascii input/image.png
 
 node index.js image-to-ascii input/image.png --font-size 10 --height 600 --color "#00ff22"
 ```
 
-### Convert Video to ASCII Art
+### Convert Video to Encoded Art
 ```bash
 node index.js video-to-ascii input/video.mp4
 
 node index.js video-to-ascii input/video.mp4 --output custom_output/
 ```
 
-### Add Logo to Image
-```bash
-node index.js add-logo input/image.png input/logo.png
-
-node index.js add-logo input/image.png input/logo.png --output branded_image.png
-```
 
 ### Convert Video to Text
 ```bash
@@ -94,8 +83,6 @@ node index.js video-to-text input/video.mp4 --height 50
 ```javascript
 const ElizaImageProcessor = require('./image-to-ascii');
 const ElizaVideoProcessor = require('./video-to-ascii');
-const ElizaLogoUtils = require('./logo-utils');
-
 const imageProcessor = new ElizaImageProcessor();
 await imageProcessor.imageToAsciiArt('input.png', 'output/', {
   fontSize: 12,
@@ -110,36 +97,26 @@ await videoProcessor.videoToAsciiArt('input.mp4', 'output_video/', {
   distance: -3,
   outputHeight: 700
 });
-
-const logoUtils = new ElizaLogoUtils();
-await logoUtils.addLogoToPNG('image.png', 'logo.png', 'output.png', {
-  logoPosition: 'bottom-right',
-  logoScale: 0.1
-});
 ```
 
 ## Configuration Options
 
 ### Image Processing
-- `fontSize` - Size of ASCII characters (default: 12)
+- `fontSize` - Size of encoded characters (default: 12)
 - `distance` - Character spacing (default: -3)
 - `outputHeight` - Output image height in pixels (default: 700)
-- `color` - ASCII character color (default: '#00ff22')
+- `color` - Encoded character color (default: '#00ff22')
 
 ### Video Processing
-- `fontSize` - ASCII character size (default: 8)
+- `fontSize` - Encoded character size (default: 8)
 - `distance` - Character spacing (default: -3)
 - `outputHeight` - Frame height (default: 700)
 - `framesPerFile` - Frames per text file for text export (default: 100)
 
-### Logo Options
-- `logoPosition` - Position: 'top-left', 'top-right', 'bottom-left', 'bottom-right', 'center'
-- `logoScale` - Logo size as percentage of image width (default: 0.1)
-- `margin` - Margin from edges in pixels (default: 20)
 
-## ASCII Character Mapping
+## Encoded Character Mapping
 
-The Eliza ASCII art uses a carefully crafted brightness-to-character mapping:
+The Eliza encoded art uses a carefully crafted brightness-to-character mapping:
 
 | Brightness Range | Character | Visual Weight |
 |-----------------|-----------|---------------|
@@ -155,16 +132,15 @@ The Eliza ASCII art uses a carefully crafted brightness-to-character mapping:
 
 ```
 ACT-Eliza/
-├── index.js              
-├── image-to-ascii.js     
-├── video-to-ascii.js     
-├── logo-utils.js         
-├── package.json          
-├── README.md            
-├── input/               
-├── output/              
-├── output_video/        
-└── output_txt/          
+├── index.js
+├── image-to-ascii.js
+├── video-to-ascii.js
+├── package.json
+├── README.md
+├── input/
+├── output/
+├── output_video/
+└── output_txt/
 ```
 
 ## Advanced Features
@@ -188,7 +164,7 @@ node index.js image-to-ascii input.png --color "#0066ff"
 ```
 
 ### High Resolution Output
-For detailed ASCII art, use larger dimensions:
+For detailed encoded art, use larger dimensions:
 
 ```bash
 node index.js image-to-ascii input.png --height 1200 --font-size 8 --distance -2
@@ -199,11 +175,11 @@ node index.js image-to-ascii input.png --height 1200 --font-size 8 --distance -2
 1. Video Processing: For large videos, consider reducing output height to improve processing speed
 2. Memory Usage: Process videos in smaller chunks for better memory management
 3. Quality vs Speed: Higher resolution outputs require more processing time
-4. File Formats: PNG files generally process faster than JPEG for ASCII conversion
+4. File Formats: PNG files generally process faster than JPEG for encoded conversion
 
 ## Contributing
 
-We welcome contributions to the Eliza ASCII Art Generator! Here's how you can help:
+We welcome contributions to the Eliza Encoder! Here's how you can help:
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
@@ -222,9 +198,6 @@ npm install
 npm run start
 ```
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Connect with us
 
@@ -237,7 +210,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - Inspired by the original Python implementation from zo-eth
 - Built by the Eliza team
-- Special thanks to the ASCII art community for inspiration
+- Special thanks to the encoded art community for inspiration
 - Canvas API for powerful image processing capabilities
 
 ## Bug Reports
